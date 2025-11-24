@@ -18,26 +18,18 @@
   background: linear-gradient(135deg, #66bb6a, #4caf50);
 }
 
+.card-hover {
+  transition: all 0.3s ease;
+}
+
 .card-hover:hover {
-  transform: translateY(-5px);
-  transition: transform 0.3s ease;
+  transform: scale(1.05);
+  box-shadow: 0 0.5rem 1.5rem rgba(102, 187, 106, 0.4) !important;
 }
 
 .btn-hover:hover {
   transform: translateY(-2px);
   transition: transform 0.3s ease;
-}
-
-.card-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(214, 51, 132, 0.9);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card-hover:hover .card-overlay {
-  opacity: 1;
 }
 
 html {
@@ -54,28 +46,48 @@ body {
 .body-gradient {
   min-height: 100vh;
   padding-top: 70px;
+  background: url('../img/fondo.png') repeat;
 }
 
 .hero-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/kyoto1.jpeg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/kioto-primavera.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  width: 100vw;
-  max-width: 100vw;
-  overflow-x: hidden;
 }
 
 .hero-bg h1 {
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.8);
   color: white;
+  font-size: clamp(3.4rem, 6.5vw, 4.5rem);
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.hero-row {
+  min-height: 65vh;
+}
+
+@media (max-width: 768px) {
+  .hero-row {
+    min-height: 48vh;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-row {
+    min-height: 40vh;
+  }
 }
 
 .hero-bg p {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
   color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .hero-badge {
@@ -83,7 +95,9 @@ body {
 }
 
 .hero-stats {
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   max-width: 400px;
 }
 
@@ -91,6 +105,15 @@ body {
   .hero-bg .btn {
     min-height: 48px;
     max-width: 280px;
+  }
+
+  .hero-bg h1,
+  .hero-bg p {
+    color: white !important;
+  }
+
+  .btn-green {
+    background: linear-gradient(135deg, #81c784, #66bb6a) !important;
   }
 }
 
@@ -106,7 +129,7 @@ body {
 }
 
 .contact-left {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/kyoto3.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/kioto-8.webp');
   background-size: cover;
   background-position: center;
   min-height: 500px;
@@ -134,7 +157,11 @@ body {
 }
 
 .nav-link-custom {
-  color: #6f42c1;
+  color: #472588;
+  transition: all 0.3s ease;
+}
+.nav-link-custom {
+  color: #472588;
   transition: all 0.3s ease;
 }
 
@@ -144,10 +171,11 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(214, 51, 132, 0.2);
 }
-
-.logo-img-large {
-  width: auto;
-  mask-image: linear-gradient(white 0%, white 40%, #d63384 100%);
+.nav-link-custom:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #d63384;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(214, 51, 132, 0.2);
 }
 
 @media (max-width: 1199px) {
@@ -156,17 +184,7 @@ body {
   }
 
   .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    z-index: 1000;
-    width: 100%;
-  }
-
-  .navbar-custom {
-    overflow-x: hidden;
+    padding: 1rem;
   }
 }
 
@@ -176,17 +194,8 @@ body {
   }
 }
 
-.hero-row {
-  min-height: 60vh;
-}
-
-.stat-circle {
-  width: 60px;
-  height: 60px;
-}
-
 .section-bg {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
 }
 
@@ -201,7 +210,7 @@ body {
 }
 
 .about-img-bg {
-  background: linear-gradient(rgba(214, 51, 132, 0.3), rgba(111, 66, 193, 0.3)), url('../img/kioto4.jpg');
+  background: linear-gradient(rgba(214, 51, 132, 0.3), rgba(111, 66, 193, 0.3)), url('../img/kioto-6.jpg');
   background-size: cover;
   background-position: center;
   min-height: 400px;
@@ -228,9 +237,7 @@ body {
 .footer-bg {
   background: rgba(252, 228, 236, 0.95);
   backdrop-filter: blur(10px);
-  border-top: 2px solid rgba(214, 51, 132, 0.2) !important;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  border-top: 2px solid rgba(214, 51, 132, 0.2);
   width: 100vw;
   max-width: 100vw;
   overflow-x: hidden;
@@ -249,4 +256,50 @@ body {
   .footer-gif {
     max-width: 150px;
   }
+}
+
+
+.carousel-glass {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.stat-glass {
+  background: rgba(129, 199, 132, 0.25);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-stats .text-dark {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.stat-size {
+  width: 70px;
+  height: 70px;
+}
+
+.about-img-small {
+  min-height: 300px;
+}
+
+.about-thumb {
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-thumb-1 {
+  background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80');
+}
+
+.about-thumb-2 {
+  background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80');
+}
+
+.map-iframe {
+  border: 0;
 }
