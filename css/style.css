@@ -69,6 +69,8 @@ body {
 @media (max-width: 768px) {
   .hero-bg {
     min-height: 48vh;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
 }
 
