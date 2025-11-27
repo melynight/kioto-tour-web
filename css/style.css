@@ -54,23 +54,26 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  min-height: 65vh;
 }
 
 .hero-bg h1 {
   text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.8);
   color: white;
-  font-size: clamp(3.4rem, 6.5vw, 4.5rem);
+  font-size: clamp(2.5rem, 8.5vw, 5rem);
   line-height: 1.05;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-.hero-row {
-  min-height: 65vh;
+@media (max-width: 768px) {
+  .hero-bg {
+    min-height: 48vh;
+  }
 }
 
 @media (max-width: 375px) {
-  .hero-row {
+  .hero-bg {
     min-height: 40vh;
   }
 }
@@ -97,6 +100,8 @@ body {
   .hero-bg .btn {
     min-height: 48px;
     max-width: 280px;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.5rem !important;
   }
 
   .hero-bg h1,
@@ -110,6 +115,16 @@ body {
 }
 
 @media (max-width: 576px) {
+  .hero-bg .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem !important;
+    max-width: 240px;
+  }
+
+  .hero-bg p {
+    font-size: 1.1rem;
+  }
+
   .hero-bg {
     background-attachment: scroll;
   }
